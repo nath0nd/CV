@@ -1,0 +1,142 @@
+/* ============ STYLES GLOBAUX - STYLE CALCULATRICE NOIR/ORANGE ============ */
+:root {
+  --accent: #ff9500; /* orange vif */
+  --bg: #1c1c1e; /* noir anthracite */
+  --text: #f0f0f0; /* blanc cassé */
+  --card-bg: #2c2c2e; /* fond des cartes */
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'SF Pro Text', 'San Francisco', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ============ NAVIGATION ============ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2c2c2e;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 22px;
+}
+
+.menu a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  transition: all 0.3s;
+}
+
+.menu a:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ============ SECTIONS ============ */
+section {
+  padding: 120px 20px;
+  max-width: 1000px;
+  margin: auto;
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+h1, h2 {
+  color: var(--accent);
+  font-family: 'SF Pro Display', 'San Francisco', sans-serif;
+}
+
+p, li {
+  color: var(--text);
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============ PROJETS ============ */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .menu a {
+    margin: 5px 0;
+  }
+}
